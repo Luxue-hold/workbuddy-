@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>元鼓鼓的工作台</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>" />
+</head>
+<body>
+  <div class="app">
+    <!-- 侧边栏 / 任务栏 -->
+    <aside class="sidebar">
+      <div class="brand">
+        <span class="brand-logo">🌸</span>
+        <span class="brand-name">元鼓鼓</span>
+      </div>
+      <nav class="nav" id="nav">
+        <button class="nav-item active" data-view="overview"><span class="nav-icon">🏠</span><span class="nav-label">概览</span></button>
+        <button class="nav-item" data-view="plan"><span class="nav-icon">📋</span><span class="nav-label">每日计划</span></button>
+        <button class="nav-item" data-view="diet"><span class="nav-icon">🍱</span><span class="nav-label">饮食</span></button>
+        <button class="nav-item" data-view="fitness"><span class="nav-icon">💪</span><span class="nav-label">健身</span></button>
+        <button class="nav-item" data-view="mood"><span class="nav-icon">😊</span><span class="nav-label">心情记录</span></button>
+        <button class="nav-item" data-view="review"><span class="nav-icon">📝</span><span class="nav-label">每日复盘</span></button>
+        <button class="nav-item" data-view="time"><span class="nav-icon">⏱️</span><span class="nav-label">时间追踪</span></button>
+        <button class="nav-item" data-view="sleep"><span class="nav-icon">😴</span><span class="nav-label">睡眠记录</span></button>
+        <button class="nav-item" data-view="finance"><span class="nav-icon">💰</span><span class="nav-label">记账</span></button>
+      </nav>
+      <div class="sidebar-foot">
+        <button class="btn-ghost" id="btn-export" title="导出全部数据">⬇ 导出</button>
+        <button class="btn-ghost" id="btn-import" title="导入数据">⬆ 导入</button>
+        <input type="file" id="import-file" accept="application/json" hidden />
+      </div>
+    </aside>
+
+    <!-- 主内容区 -->
+    <main class="main">
+      <header class="topbar">
+        <div class="topbar-left">
+          <h1 id="view-title">概览</h1>
+          <p id="view-date" class="view-date"></p>
+        </div>
+        <div class="topbar-right">
+          <label class="date-picker">
+            <span>查看日期</span>
+            <input type="date" id="date-select" />
+          </label>
+        </div>
+      </header>
+      <section class="content" id="app-view"></section>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
